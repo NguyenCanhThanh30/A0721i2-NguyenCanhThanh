@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <input type="text" id="nhapsolieu">
+    <input type="button" onclick="doitienviet()" value="ĐỔI TIỀN VIỆT">
+    <input type="button" onclick="doitiendo()" value="ĐỔI TIỀN USA">
+</form>
+<script>
+    function doitienviet() {
+        let nhapsolieu = document.getElementById("nhapsolieu").value;
+        let tinhtoan = nhapsolieu*23000;
+        console.log(tinhtoan);
+        alert(tinhtoan+ "VND");
+
+
+
+
+        }
+    function doitiendo() {
+        let nhapsolieu = document.getElementById("nhapsolieu").value;
+        let tinhtoan = nhapsolieu/23000;
+        alert(tinhtoan+ "$")
+
+    }
+</script>
+</body>
+</html>

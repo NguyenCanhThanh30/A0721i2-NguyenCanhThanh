@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <input type="text" id="nhapso">
+    <input type="button" onclick="xacnhan()" value="xác nhận">
+</form>
+<script>
+    function xacnhan() {
+        let nhapso = document.getElementById("nhapso").value;
+        let tinhtoan = Math.floor(Math.random() * 10);
+        console.log(tinhtoan);
+        if (nhapso == tinhtoan){
+            alert("CHÍNH XÁC , mega vjo bro !!!!");
+        }
+        else {
+            alert("SAI rồi bro ơi !!!")
+        }
+
+    }
+</script>
+</body>
+</html>

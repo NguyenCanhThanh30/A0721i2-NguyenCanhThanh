@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <input type="text" id="a">
+    <input type="text" id="b">
+    <input type="text" id="c">
+    <input type="button" onclick="timsolonnhat()" value="Tìm Số Lớn Nhất">
+</form>
+<script>
+    function timsolonnhat() {
+        let a = document.getElementById('a').value;
+        let b = document.getElementById('b').value;
+        let c = document.getElementById('c').value;
+        if (a>b){
+            if (a>c){
+                alert("Số "+a +" lớn nhất bro ơi !!!");
+            }
+            else {
+                alert("Số "+c+" lớn nhất bro ơi !!!");
+            }
+
+        }
+        else if (a<b){
+            if (b>c){
+                alert("Số "+b+" lớn nhất bro ơi !!!");
+            }
+            else {
+                alert("Số "+c+" lớn nhất bro ơi !!!");
+            }
+        }
+
+    }
+</script>
+</body>
+</html>

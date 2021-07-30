@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <h2>BẢNH TÍNH ĐIỂM TRUNG BÌNH</h2>
+    <P>Nhập điểm toán</P>
+    <input type="text" id="diemtoan">
+    <br>
+    <p>Nhập điểm lý</p>
+    <input type="text" id="diemly">
+    <p>Nhập điểm hoá</p>
+    <input type="text" id="diemhoa">
+    <br>
+    <br>
+    <input type="button" onclick="xacnhan()" value="Xác Nhận">
+</form>
+<script>
+    function xacnhan() {
+        let diemtoan = parseInt( document.getElementById("diemtoan").value);
+        let diemhoa = parseInt( document.getElementById("diemhoa").value);
+        let diemly = parseInt( document.getElementById("diemly").value);
+        let tinhtoan = parseInt( (diemtoan+ diemly + diemhoa) / 3);
+        console.log(tinhtoan);
+        alert(tinhtoan);
+    }
+</script>
+</body>
+</html>

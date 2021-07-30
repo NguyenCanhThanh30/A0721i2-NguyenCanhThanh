@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <input type="text" id="nhapsolieu" >
+    <input type="button" onclick="xacnhan()"  value="Xác nhận">
+    <script>
+        function xacnhan() {
+            let nhapsolieu = document.getElementById("nhapsolieu").value;
+            let tinhtoan = ((nhapsolieu-32)/9)/5;
+            alert(tinhtoan);
+
+        }
+    </script>
+</form>
+</body>
+</html>
