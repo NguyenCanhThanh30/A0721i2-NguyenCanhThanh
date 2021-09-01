@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[*Bài tập] Ứng dụng quản lý sản phẩm sử dụng hàm</title>
+    <style type="text/css">
+        table {
+            font-family: verdana, arial, sans-serif;
+            font-size: 11px;
+            color: #333333;
+            border-width: 0px;
+            border-color: #3A3A3A;
+            border-collapse: collapse;
+        }
+        table td {
+            cursor: pointer;
+        }
+        table tr:nth-child(even) td{
+            background-color: #848c90;
+        }
+        table td {
+            width: 100px;
+            border-width: 0px;
+            padding: 10px;
+            border-style: solid;
+            border-color: #FFA6A6;
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    let arrProduct = ["Apple", "Sony", "Xiaomi", "Sam Sung", "Vivo"];
+
+    function displayProduct() {
+        document.body.innerHTML = "";
+        document.write("<h3>Add New Product</h3>");
+        document.write("<input type='text' id='inputProduct'><button type='button' onclick='addProduct()'>Add</button>");
+        document.write("<h4>Dislay All Product</h4><h5 id='totalProduction'></h5>");
+        document.write("<table>");
+        for (i = 0; i < arrProduct.length; i++) {
+            document.write("<tr>");
+            document.write("<td>" + arrProduct[i] + "</td>")
+            document.write("<td><button type='button' onclick='updateProduct(" + i + ")'>Edit</button></td>");
+            document.write("<td><button type='button' onclick='delProduct(" + i + ")'>Delete</button></td>");
+            document.write("</tr>");
+        }
+        document.write("</table>");
+    }
+
+    function addProduct() {
+        let product = document.getElementById("inputProduct").value;
+        if (arrProduct.indexOf(product) != -1) {
+            alert("The product already exists. Please re-enter.");
+        } else {
+            arrProduct.push(product);
+            displayProduct();
+        }
+    }
+
+    function delProduct(index) {
+        if (confirm("Are you sure " + arrProduct[index] + " ?")) {
+            arrProduct.splice(index, 1);
+            displayProduct();
+        }
+    }
+
+    function updateProduct(index){
+        document.body.innerHTML = "";
+        document.write("<h3>Add New Product</h3>");
+        document.write("<input type='text' id='inputProduct'><button type='button' onclick='addProduct()'>Add</button>");
+        document.write("<h4>Dislay All Product</h4><h5 id='totalProduction'></h5>");
+        document.write("<table>");
+        for (i = 0; i < arrProduct.length; i++) {
+            document.write("<tr>");
+            if (i == index){
+                document.write("<td><input type='text' id='editProduct' value='" + arrProduct[i] + "'></td>");
+                document.write("<td><button type='button' onclick='changeProduct(" + i + ")'>Update</button></td>");
+            } else {
+                document.write("<td>"+ arrProduct[i] + "</td>");
+                document.write("<td><button type='button' onclick='changeProduct(" + i + ")'>Edit</button></td>");
+            }
+            document.write("<td><button type='button' onclick='delProduct(" + i + ")'>Delete</button></td>");
+            document.write("</tr>");
+        }
+        document.write("</table>");
+    }
+
+    function changeProduct(index){
+        let product = document.getElementById("editProduct").value;
+        if (arrProduct.indexOf(product) != -1){
+            alert("The product already exists. Please re-enter.");
+        } else {
+            arrProduct[index] = product;
+            displayProduct();
+        }
+    }
+    displayProduct();
+</script>
+
+</body>
+</html>
