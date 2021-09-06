@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Game đơn giản - di chuyển đối tượng</title>
+</head>
+<body>
+<div id="game"></div>
+<script>
+    class Nasa {
+        constructor(image, top, left, size) {
+            this.image = image;
+            this.top = top;
+            this.left = left;
+            this.size = size;
+        }
+
+        getNasaElement() {
+            return '<img width="' + this.size + '"' +
+                ' height="' + this.size + '"' +
+                ' src="' + this.image + '"' +
+                ' style="top: ' + this.top + 'px; left:' + this.left + 'px; position:absolute;" />';
+        }
+
+        moveRight() {
+            this.left += 100;
+            console.log('Ok: ' + this.left);
+        }
+        moveLeft() {
+            this.left -= 100;
+            console.log('Ok: ' + this.left);
+        }
+        moveTop(){
+            this.top -= 100;
+            console.log('Ok: ' + this.top);
+        }
+        moveDown(){
+            this.top += 100;
+            console.log('Ok: ' + this.top);
+        }
+    }
+
+    var nasa = new Nasa('nasa.jpg', 20, 30, 200);
+
+    function start() {
+        if (nasa.left < window.innerWidth - nasa.size) {
+            nasa.moveRight();
+        } else if (nasa.top < window.innerHeight - nasa.size){
+            nasa.moveDown();
+        } else if (nasa.left > window.innerWidth - nasa.size){
+            nasa.moveLeft();
+        } else if (nasa.top > window.innerHeight - nasa.size){
+            nasa.moveTop();
+        }
+        document.getElementById('game').innerHTML = nasa.getNasaElement();
+        setTimeout(start, 500)
+    }
+
+    start();
+</script>
+</body>
+</html>
