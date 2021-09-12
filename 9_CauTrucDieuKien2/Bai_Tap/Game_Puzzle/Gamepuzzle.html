@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="display: flex;">
+    <div id="a" style=" width: 250px;">
+    <img src="1.jpg" onclick="changeImgA()" id="carA">
+    <img src="2.jpg" onclick="changeImgB()" id="carB" >
+    <img src="3.jpg" onclick="changeImgB()" id="carC" >
+    <img src="4.jpg" onclick="changeImgB()" id="carD" >
+</div>
+</body>
+<script>
+    let carA = document.getElementById("carA");
+    let carB = document.getElementById("carB");
+    let carC = document.getElementById("carC");
+    let carD = document.getElementById("carD");    
+    function changeImgA() {
+        // alert(carA.src)
+        if (carA.getAttribute("src") == "1.jpg") {
+            document.getElementById("carA").src = "2.jpg"
+        } else if (carA.getAttribute("src") == "2.jpg") {
+            document.getElementById("carA").src = "3.jpg"
+        } else {
+            document.getElementById("carA").src = "1.jpg"
+        }
+    }
+    function changeImgB() {
+        // alert(carA.src)
+        if (carA.getAttribute("src") == "2.jpg") {
+            document.getElementById("carA").src = "3.jpg"
+        } else if (carA.getAttribute("src") == "3.jpg") {
+            document.getElementById("carA").src = "4.jpg"
+        } else {
+            document.getElementById("carA").src = "2.jpg"
+        }
+    }
+
+</script>
+</html>
