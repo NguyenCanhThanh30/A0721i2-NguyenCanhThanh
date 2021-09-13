@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 1</title>
+</head>
+<body>
+<!-- Bài 1: Viết hàm tính tổng các số chẵn trong ma trận có kích thước m*n. Với m, n là các số nhập từ bàn phím. -->
+<script>
+    function sumMatrix() {
+        alert("Creating Matrix");
+        let inputMatrix = parseInt(prompt("Input number of array elements: "));
+        let inputCol = parseInt(prompt("Input array of a column: "));
+        let arrMatrix = new Array(inputMatrix);
+
+        for (let i = 0; i < arrMatrix.length; i++) {
+            arrMatrix[i] = [];
+            for (let j = 0; j < inputCol; j++) {
+                let inputRow = parseInt(prompt("The input element of an array: " + j));
+                arrMatrix[i].push(inputRow);
+            }
+        }
+        console.log(arrMatrix)
+        // for (let i = 0; i < arr.length; i++) {
+        //     for (let j = 0; j < arr[i].length; j++) {
+        //         console.log(arr[i][j]);
+        //     }
+        // }
+
+        let sum = 0;
+        for (let i = 0; i < arrMatrix.length; i++) {
+            for (let j = 0; j < arrMatrix[i].length; j++) {
+                let elements = arrMatrix[i][j];
+                if (elements % 2 === 0) {
+                    sum += elements;
+                }
+
+            }
+        }
+        alert("Sum of even-numbered elements in Matrix: " + sum);
+    }
+
+    sumMatrix();
+</script>
+</body>
+</html>
